@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Debugging Challenge</h1>
+    <script>
+        // Debugging with developer tool in browser 
+        let i = 5
+        let j = 10
+        let k = 25;
+        let l = "Joe"; //ReferenceError, quotation marks added
+        const arr = [3, 5, 7];
+
+        if (i < j) {
+            console.log(i); // i is avariable, not a string, quotation marks removed
+        } else if (j > k) {
+            console.log("k");
+        } else { 
+            console.log(j);  //Ivaild token-error,extra quotation mark " removed
+        }
+
+        for (let i = 0; i < arr.length; ++i) {  //Changed i <= 3 to i < arr.length so the loop goes only through valid indexes (prevents undefined error)
+            console.log(arr[i]);
+        }
+    </script>
+</body>
+</html>
