@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--1.Document.write-->
+    <script>
+        document.write("Hello,this is my first DOM manipulation exercise.<br><br>")
+    </script>
+
+    <!--2.Repeating Text Function-->
+    <script src="Function.js"></script> <!--Link the js file to html-->
+    <script>
+        repText() //Call the function
+    </script>
+    
+     <!--3.Conditional Location-->
+ <script>
+        //other codes work when this code is commented out
+        console.log(location.href);
+        if (navigator.userAgent.includes("Mozilla")) {
+        location.href = "https://www.hs.fi"; //Redirect to media page
+        }
+    </script>
+
+    <!--4.Confirmation Dialog-->
+    <p id="output"></p> <!-- set an element with id= output for document.getElementById to find it-->
+    <script>
+        let answer = confirm("Are you a student?");
+        document.getElementById("output").innerHTML= "Answer: " + answer;
+    </script>
+
+    <!--5.Random Image-->
+    <!--Set a image tag and size-->
+    <img id="randomImage" width="500"> 
+
+    <script>
+        //Array of image URL
+        let images =[
+            "https://images.pexels.com/photos/266617/pexels-photo-266617.jpeg",
+            "https://images.pexels.com/photos/7745946/pexels-photo-7745946.jpeg",
+            "https://media.istockphoto.com/id/1859646927/fi/valokuva/l%C3%A4hikuva-miehest%C3%A4-ja-naisesta-r%C3%A4pyttelem%C3%A4ss%C3%A4-valkoisia-kahvimukeja-kahvilassa.jpg?s=2048x2048&w=is&k=20&c=Kg4z_SCC8QIceqSrEbt5QZlKyOdlD8I-pKN6otV6Qvg="
+        ];
+
+        let randomIndex =Math.floor(Math.random()* images.length); //Pick random index
+        document.getElementById("randomImage").src =images[randomIndex]; // Set img src to random image
+
+    </script>
+
+</body>
+</html>
