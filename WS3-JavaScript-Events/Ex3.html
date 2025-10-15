@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3</title>
+</head>
+<body>
+    <h1>Using Named Functions for Cleaner Event Handling</h1>
+    <script>
+        // This function runs when the button is clicked
+        function myFunction() {
+
+         // Create a text message with browser info
+         const info =
+        "Browser App Name: " + navigator.appName + "<br>" +
+        "Browser Code Name: " + navigator.appCodeName;
+
+      // Find the element with id="demo" and show the message there
+        document.getElementById("demo").innerHTML = info;
+    }
+  </script>
+
+   <!-- When this button is clicked run the function -->
+  <button onclick="myFunction()">Show Browser Info</button>
+
+  <!-- This is where the browser info will appear -->
+  <p id="demo"></p>
+    
+</body>
+</html>

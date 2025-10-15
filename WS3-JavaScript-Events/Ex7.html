@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex7</title>
+</head>
+<body>
+    <h1>Considering Browser Compatibility</h1>
+
+    <!--button-->
+    <button id="compatBtn">Compatible Click</button>
+
+    <script>
+        //Get the button element
+        var btn = document.getElementById('compatBtn');
+
+        //Function to run on click
+        function compatClick() {
+            alert('Compatible!');
+        }
+
+        //Check if addEventListener is supported
+        if (window.addEventListener) {
+            btn.addEventListener('click', compatClick);
+        }
+
+        //Syntax for the oldies
+        else if (window.attachEvent) {
+            btn.attachEvent('onclick', compatClick);
+        }
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5 Adding and Removing Event Listeners Dynamically</title>
+</head>
+<body>
+    <h1 id="myH1">Click me!</h1>
+
+    <!-- Button to remove the click listener -->
+    <button onclick="removeListener()">Remove Listener</button>
+    
+    <script>
+        //Grab the first <h1> element
+        let element = document.getElementsByTagName('h1')[0];
+
+        //Define a function for the click event
+        function sayHello() {
+            alert("Hello World!");
+        }
+
+        //Attach the click event listener
+        element.addEventListener("click", sayHello);
+
+        //Define function to remove the listener and detach the say Hello function from the click event
+        function removeListener() {
+            element.removeEventListener("click", sayHello);
+            console.log("Listener removed!");
+        }
+
+
+    </script>
+
+</body>
+</html>

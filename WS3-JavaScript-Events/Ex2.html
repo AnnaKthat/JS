@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2</title>
+</head>
+<body>
+    <h1>Handling Events Using HTML Attributes</h1>
+
+    <!--onfocus triggers an alert as soon as you click inside the text input field-->
+    <input type="text" onfocus="alert('Input focused!')" placeholder="Click me"/>
+
+    <!--shows an alert and then "return false" prevents the form from reloading the page-->
+     <form onsubmit="alert('Form submit intercepted!'); return false;">
+        <input type="text" placeholder="Type something here">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!--one alert appears when you hover over it and another appears when you move the mouse away-->
+    <button onmouseover="alert('Mouse is over the button!')" onmouseout="alert('Mouse left the button!')">
+        Hover Me
+    </button>
+    
+</body>
+</html>

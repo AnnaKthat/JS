@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6</title>
+</head>
+<body>
+    <h1>Attaching Multiple Event Listeners to the Same Element</h1>
+
+    <!-- Button that will have multiple click listeners -->
+    <button id="a">Click me for multiple actions</button>
+
+    <script>
+        //Get the button element
+       var element = document.getElementById('a');
+       
+       //Onclick (second assignment overwrites the first)
+       element.onclick = function() { alert('First!'); };  // Will be overwritten
+       element.onclick = function() { alert('Second!'); }; // Only this one runs
+
+       //addEventListener (multiple listeners allowed)
+       element.addEventListener('click', function() { alert('Third!'); });
+       element.addEventListener('click', function() { alert('Fourth!'); });
+
+    </script>
+</body>
+</html>

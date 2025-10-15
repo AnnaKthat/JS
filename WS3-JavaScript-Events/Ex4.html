@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4</title>
+</head>
+<body>
+    <h1>Identifying and Using Common JS Events</h1>
+
+    <!-- 1. onload: Runs when the page is fully loaded -->
+     <body onload="alert('Page loaded!')">
+        
+    <!-- 2. onchange: Fires when a new option is selected -->
+    <select onchange="alert('You changed the selection!')">
+        <option value="">--Choose--</option>
+        <option>Do this</option>
+        <option>Do that</option>
+    </select>
+    
+    <br><br>
+
+    <!-- 3. onmouseover / onmouseout: Swap image when hovering -->
+     <img src="https://images.pexels.com/photos/2747793/pexels-photo-2747793.jpeg" 
+       onmouseover="this.src='https://images.pexels.com/photos/2747793/pexels-photo-2747793.jpeg/0000FF'"
+       onmouseout="this.src='https://images.pexels.com/photos/2747793/pexels-photo-2747793.jpeg'"
+       alt="Hover to change image" 
+       width="300">
+
+    <br><br>
+
+    <!-- 4. onkeydown: Fires when a key is pressed inside the input -->
+     <input type="text" placeholder="Type something" onkeydown="alert('Key pressed!')">
+
+</body>
+</html>
