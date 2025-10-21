@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding and Selecting HTML Elements</title>
+</head>
+<body>
+    <h1 id="unique-id">My Unique Heading</h1>
+    <p class="info-text">First info paragraph.</p>
+    <p class="info-text">Second info paragraph.</p>
+    <div>A simple div.</div>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+    </ul>
+
+    <script>
+        //Selects an element with a specific ID (must be unique)
+        const uniqueHeading = document.getElementById('unique-id');
+        console.log('Element by ID:', uniqueHeading.textContent);
+
+        //Selects all elements that share the same class name
+        const infoParagraphs = document.getElementsByClassName('info-text');
+        console.log('Elements by Class Name (first one):', infoParagraphs[0].textContent);
+
+        //Selects all elements with the given tag name
+        const allParagraphs = document.getElementsByTagName('p');
+        console.log('Total <p> elements:', allParagraphs.length);
+
+        //querySelector: selects the first element that matches a CSS selector
+        const firstDiv = document.querySelector('div');
+        console.log('First <div> element:', firstDiv.textContent);
+
+        //querySelectorAll: selects all elements that match a CSS selector
+        const allListItems = document.querySelectorAll('ul li');
+        console.log('Total <li> items:', allListItems.length);
+
+        //Example to test how it works: querySelectorAll returns a NodeList that you can loop through
+        allListItems.forEach((item, index) => {
+            console.log(`List item ${index + 1}:`, item.textContent);
+        });
+        
+    </script>
+</body>
+</html>

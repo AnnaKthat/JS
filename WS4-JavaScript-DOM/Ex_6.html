@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Dynamic Web Pages and Single Page Applications (SPAs)</title>
+</head>
+<body>
+    <button id="addParagraphBtn">Add Paragraph</button>
+    <button id="addListItemBtn">Add List Item</button>
+    <button id="removeLastBtn">Remove Last Item</button>
+    <ul id="myList"></ul>
+
+    <script>
+        let paragraphCount = 0;
+        document.getElementById('addParagraphBtn').addEventListener('click', () => {
+            const p = document.createElement('p'); //Create element
+            paragraphCount++;
+            p.textContent = `Paragraph #${paragraphCount}`; //Set content
+            p.style.color = 'blue'; //Style it
+            document.body.appendChild(p);//Add to DOM
+            console.log(`Added paragraph: "${p.textContent}"`);
+        });
+
+        let listItemCount = 0;
+        document.getElementById('addListItemBtn').addEventListener('click', () => {
+            const li = document.createElement('li'); //Create element
+            listItemCount++;
+            li.textContent = `List Item ${listItemCount}`; //Set content
+            document.getElementById('myList').appendChild(li); //Add to UL
+            console.log(`Added list item: "${li.textContent}"`);
+        });
+
+        //Remove Last Item
+        document.getElementById('removeLastBtn').addEventListener('click', () => {
+            const bodyParagraphs = document.querySelectorAll('body p'); //All paragraphs
+            const listItems = document.querySelectorAll('#myList li'); //All list items
+
+            if (bodyParagraphs.length > 0) {
+                console.log(`Removing last paragraph: "${bodyParagraphs[bodyParagraphs.length - 1].textContent}"`);
+                bodyParagraphs[bodyParagraphs.length - 1].remove(); //Remove last paragraph
+            } else if (listItems.length > 0) {
+                console.log(`Removing last list item: "${listItems[listItems.length - 1].textContent}"`);
+                listItems[listItems.length - 1].remove(); //Remove last list item if no paragraphs
+            } else {
+                console.log('No items left to remove!');
+                alert('No items left to remove!'); //Inform the user
+            }
+        });
+</script>
+
+</body>
+</html>

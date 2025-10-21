@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Creating and Adding New Elements</title>
+</head>
+<body>
+    <button id="addParagraphBtn">Add New Paragraph</button>
+    <button id="addListItemBtn">Add New List Item</button>
+    <ul id="myList">
+        <li>Existing List Item 1</li>
+    </ul>
+    
+    <script>
+        //Counter to track how many paragraphs are added
+        let paragraphCount = 0;
+
+        //Add event listener to "Add New Paragraph" button
+        document.getElementById('addParagraphBtn').addEventListener('click', () => {
+            //Create a new paragraph element to insert into the page
+            const newParagraph = document.createElement('p');
+
+            //Customize the paragraph (content and styling)
+            paragraphCount++;
+            newParagraph.textContent = `Dynamically created paragraph #${paragraphCount}`;
+            newParagraph.style.color = 'blue'; 
+
+            //Append the paragraph to the body (inserting it to DOM)
+            document.body.appendChild(newParagraph);
+        });
+
+        //Counter to track list items
+        let listItemCount = 1;
+
+        //Add event listener to "Add New List Item" button
+        document.getElementById('addListItemBtn').addEventListener('click', () => {
+            //Create a new list item element
+            const newListItem = document.createElement('li');
+
+            //Customize the list item
+            listItemCount++;
+            newListItem.textContent = `New List Item ${listItemCount}`;
+
+            //Append the list item to the existing <ul> (add to correct pattern)
+            const myList = document.getElementById('myList');
+            myList.appendChild(newListItem);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing HTML Content and Attributes</title>
+</head>
+<body>
+    <h1 id="myHeading">Dog Heading</h1>
+    <p id="myParagraph">Look at this cutie.</p>
+    <img id="myImage" src="https://images.pexels.com/photos/485294/pexels-photo-485294.jpeg" alt="Dog Image" width="200" height="150"> <br><br> 
+    <a id="myLink" href="https://www.wikipedia.org/">Wikipedia</a>
+
+    <script>
+        //Changing innerHTML: used to update or replace the HTML content(string element,heading for example)
+        const headingElement = document.getElementById('myHeading');
+        headingElement.innerHTML = '<strong>New <em>Cat</em> Heading</strong>';
+
+        //Changing textContent: used to change text only (it won’t treat HTML tags as code)It's safer than innerHTML (won't be any HTML formatting)
+        const paragraphElement = document.getElementById('myParagraph');
+        paragraphElement.textContent = 'This cat is cute too.';
+
+        //Changing an attribute (src for an image)
+        const imageElement = document.getElementById('myImage');
+        imageElement.setAttribute('src', 'https://images.pexels.com/photos/4588444/pexels-photo-4588444.jpeg');
+        imageElement.setAttribute('alt', 'Cat Image');
+        // Change image size
+        imageElement.style.width = '200px';
+        imageElement.style.height = 'auto'; //keeps proportions
+
+        //Changing multiple attributes (href and target for a link, and textContent to change the visible link text)
+        const linkElement = document.getElementById('myLink');
+        linkElement.setAttribute('href', 'https://www.google.com');
+        linkElement.setAttribute('target', '_blank'); //Opens in a new tab
+        linkElement.textContent = 'Visit Google'; //Also change link text
+    </script> 
+
+</body>
+</html>

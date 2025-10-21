@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Modifying CSS Styles and Applying Animations</title>
+    <style>
+        /*Class for a red background and white text*/
+        .red-background {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        /*Class that triggers a fade-in animation*/
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            /*Animation brings opacity from current (0) to 1 */
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="changeStyleBtn">Toggle Red Background</button>
+    <p id="styledParagraph">Here is the changing background and text color.</p>
+    <button id="animateBtn">Fade In Heading</button>
+    <h1 id="animatedHeading">Text appears</h1>
+
+    <script>
+        //Changing individual style properties, element.style property is used to set single CSS values
+        const paragraph = document.getElementById('styledParagraph');
+        const changeStyleBtn = document.getElementById('changeStyleBtn');
+
+        //Change inline red background: if paragraph's inline background is 'red' clear it, otherwise set background to red and text to white (element.style only shows inline styles)
+        changeStyleBtn.addEventListener('click', () => {
+        if (paragraph.style.backgroundColor === 'red') {
+        //Clear styles to go back to the default look
+        paragraph.style.backgroundColor = '';
+        paragraph.style.color = '';
+      } else {
+        //Set inline styles directly
+        paragraph.style.backgroundColor = 'red';
+        paragraph.style.color = 'white';
+      }
+    });
+
+        //Toggling CSS classes for animation
+        const headingToAnimate = document.getElementById('animatedHeading');
+        headingToAnimate.style.opacity = '0'; //Element is hidden
+        //When the button is clicked, the 'fade-in' class to trigger the CSS animation
+        document.getElementById('animateBtn').addEventListener('click', () => {
+            headingToAnimate.classList.add('fade-in');
+        });
+
+    </script>
+    
+
+</body>
+</html>
