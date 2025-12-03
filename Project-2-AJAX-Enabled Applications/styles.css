@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif; /*Setting front*/
+  background: #c9d9e8;          /*Background color*/       
+  padding: 20px;                  /*To prevent content from touching edges*/  
+  margin: 0;                      /*Remove default browser margin*/
+}
+
+.title {
+    text-align: center;             /*Center the main title*/
+    margin-bottom: 25px;            /*Space below the title*/
+    font-size: 32px;                /*Title size*/
+    color: #4e3bc8;               /*Title color*/
+    font-weight: bold;              /*Bold title*/
+
+    transition: color 0.4s ease;    /*Smooth color transition on hover*/
+}
+
+.title:hover {
+    color: #0077ff;               /*Title color on hover*/
+}
+
+.searchBox {
+    display: flex;             /*Flexbox for layout*/
+    justify-content: center;   /*Center them on the page*/
+    gap: 10px;                 /*Space between input and button*/
+    margin-bottom: 30px;       /*Space below the search box*/
+}
+
+
+.searchBox input {
+    width: 300px;                   /*Input box width*/
+    padding: 10px;                  /*Spacing inside the input box*/
+    border-radius: 8px;            /*Rounded corners*/
+    border: 1px solid #ccc;      /*Light border color*/
+    font-size: 16px;              /*Input text size*/
+}
+
+.searchBox button {
+    padding: 10px 15px;         /*Button padding*/
+    background: #0077cc;      /*Theme color*/
+    color: white;            /*Button text color*/
+    border: none;             /*No border*/
+    border-radius: 8px;       /*Rounded corners*/
+    cursor: pointer;           /*Pointer cursor on hover*/
+    font-size: 16px;         /*Button text size*/
+    transition: 0.2s ease;   /*Smooth hover transition*/
+}
+
+.searchBox button:hover {
+    background: #005fa3;    /*Darker theme color on hover*/
+}
+
+#loading {
+    text-align: center;  /*Center the loading message*/
+    font-size: 20px;    /*Loading message front*/
+    color: #0077cc;   /*Theme color*/   
+}
+
+.hidden {
+    display: none;  /*Utility class to hide elements*/
+}
+
+#currentWeather,
+#forecast {
+    background: white;  /*Container color*/
+    padding: 15px;        /*Spacing inside cards*/ 
+    border-radius: 8px;   /*Soft rounded corners*/
+    margin-bottom: 20px;  /* Space between sections */
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);   /*Soft shadow*/
+}
+ 
+#forecast {
+    display: grid;                                                      /*Layout for forecast items */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));        /*Auto-fit makes it responsive, with readable width*/
+    gap: 15px;                                                          /* Space between forecast cards */
+}
+
+.forecast-item {
+    background: #e9f3ff;         /*Color to separate days visually*/
+    padding: 15px;                 /*Spacing*/
+    border-radius: 12px;            /*Rounded edges for visual fit*/
+    text-align: center;            /*Centered icons and text*/
+    transition: 0.2s ease;
+
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08); /*Soft shadow*/
+}
+
+.forecast-item:hover {
+    transform: scale(1.05);     /*Hover animation*/
+}
+
+#error {
+    background: #ffdddd;            /*Light red background for errors*/
+    padding: 12px;                  /*Spacing*/
+    text-align: center;             /*Center the error message*/
+    border: 1px solid #ffbbbb;  /*Border color for errors*/
+    color: #b00000;             /*Dark red text for errors*/
+    border-radius: 8px;          /*Rounded corners*/
+    margin-top: 10px;           /*Space above the error message*/
+}
